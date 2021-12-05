@@ -31,9 +31,20 @@ fn main() {
         flag: true
     };
     println!("The temp values are x {} y {} flag {}", temp.x, temp.y, temp.flag);
-
+    read_user_input();
 }
 
+fn read_user_input() {
+    println!("Please enter number");
+    let mut user_input = String::new();
+    std::io::stdin()
+        .read_line(&mut user_input)
+        .expect("Failed to read user input");
+    
+    let string_to_number: u32 = user_input.trim().parse().expect("Not able to convert to number");
+
+    println!("Number from input is {}", string_to_number);
+}
 
 fn add(x:u32, y:u32) -> u32 {
     println!("Additinal function ");
