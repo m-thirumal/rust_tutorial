@@ -1,5 +1,6 @@
 [package]
 name = "rust_tutorial"
+authors = ["Thirumal <m.Thirumal@hotmail.com>"]
 version = "0.1.0"
 edition = "2021"
 
