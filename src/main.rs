@@ -1,5 +1,7 @@
 use std::io;
 mod ownership;
+mod data_structure;
+mod exception_handle;
 
 fn main() {
     let name = "Thirumal";
@@ -34,12 +36,42 @@ fn main() {
         flag: true
     };
     println!("The temp values are x {} y {} flag {}", temp.x, temp.y, temp.flag);
-    read_user_input();
-
+    // SOME & NONE
+    some_none_example();
+    //Read input from user
+    //read_user_input();
+    //Ownership
     ownership::ownership_example();
+    // Data structure
+    data_structure::array_example();
+
+    data_structure::tuple_example();
+
+    data_structure::vector_example();
+
+    data_structure::struct_example();
+
+    data_structure::enum_example();
+
+    data_structure::hashmap_example();
+    //Exception handling
+    exception_handle::basic_example();
+
+    exception_handle::handle_error();
+
+}
+
+fn some_none_example() { //Avoid NULL
+    println!();
+    let some_number = Some(12);
+    println!("The some value {}", some_number.unwrap());
+    let none_number: Option<u32> = None;
+    println!("The none value {}", none_number.is_none());
+    println!();
 }
 
 fn read_user_input() {
+    println!();
     println!("Please enter number");
     let mut user_input = String::new();
     io::stdin()
@@ -49,6 +81,7 @@ fn read_user_input() {
     let string_to_number: u32 = user_input.trim().parse().expect("Not able to convert to number");
 
     println!("Number from input is {}", string_to_number);
+    println!();
 }
 
 fn add(x:u32, y:u32) -> u32 {
