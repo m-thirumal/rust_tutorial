@@ -21,4 +21,14 @@ fn main() {
     //
     let num1 = if num > 1 {3} else {5};
     println!("N {}", num1);
+    // function
+    let z = add(2, 5);
+    println!("Result {}", z);
+
+}
+
+
+fn add(x:u32, y:u32) -> u32 {
+    println!("Additinal function ");
+    x + y
 }
