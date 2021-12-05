@@ -1,3 +1,6 @@
+use std::io;
+mod ownership;
+
 fn main() {
     let name = "Thirumal";
     let number1:u32 = 12; //Immutable by default
@@ -32,12 +35,14 @@ fn main() {
     };
     println!("The temp values are x {} y {} flag {}", temp.x, temp.y, temp.flag);
     read_user_input();
+
+    ownership::ownership_example();
 }
 
 fn read_user_input() {
     println!("Please enter number");
     let mut user_input = String::new();
-    std::io::stdin()
+    io::stdin()
         .read_line(&mut user_input)
         .expect("Failed to read user input");
     
