@@ -24,6 +24,13 @@ fn main() {
     // function
     let z = add(2, 5);
     println!("Result {}", z);
+    //Structure
+    let temp = Template {
+        x: 12,
+        y: -43,
+        flag: true
+    };
+    println!("The temp values are x {} y {} flag {}", temp.x, temp.y, temp.flag);
 
 }
 
@@ -32,3 +39,10 @@ fn add(x:u32, y:u32) -> u32 {
     println!("Additinal function ");
     x + y
 }
+
+struct Template {
+    x:u32,
+    y:i32,
+    flag:bool
+}
+
